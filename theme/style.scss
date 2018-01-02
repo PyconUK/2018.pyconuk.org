@@ -11,7 +11,37 @@ body {
   font: $main-font;
 }
 
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 aside {
+
+  border-bottom: 8px solid black;
+
+  .content {
+    padding-top:    3em;
+    padding-bottom: 3em;
+  }
+
+  background: url('/theme/header.jpg');
+  background-size: 100%;
+  background-position: center;
+
+  img {
+    width: 150px;
+  }
+
+  h1, h2 {
+    display: inline;
+    background: white;
+    box-shadow: -5px 0 0 5px white, 5px 0 0 5px white;
+//    background: black;
+    color: black;
+  }
+
   h1 {
     font: 28pt Futura;
     font-weight: 600;
@@ -29,6 +59,15 @@ footer {
   p:first-child {
     margin-top: $default-padding;
   }
+
+  a {
+    color: $accent-grey;
+
+    &:visited {
+      color: darken($accent-grey, 15%);
+    }
+  }
+
 }
 
 .content {
