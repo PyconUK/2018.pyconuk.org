@@ -1,7 +1,7 @@
 $main-font: 12pt Helvetica, Arial, sans-serif;
 
 $max-width: 750px;
-$default-padding: 10px;
+$default-padding: 15px;
 
 $accent-grey: #999;  // No American-isms here. ;-)
 
@@ -9,6 +9,7 @@ body {
   margin: 0;
   padding: 0;
   font: $main-font;
+  line-height: 1.4em;
 }
 
 a {
@@ -29,6 +30,7 @@ aside {
   background: url('/theme/header.jpg');
   background-size: 100%;
   background-position: center;
+  background-repeat: no-repeat;
 
   img {
     width: 150px;
@@ -57,6 +59,24 @@ aside {
     background: url('/theme/header_600.jpg');
     background-size: 100%;
     background-position: center;
+    background-repeat: no-repeat;
+
+    .content {
+      padding-top:    1em;
+      padding-bottom: 1em;
+    }
+
+    h1 {
+      font-size: 22pt;
+    }
+
+    h2 {
+      font-size: 14pt;
+    }
+
+    img {
+      max-width: 100px;
+    }
   }
 }
 
@@ -65,6 +85,7 @@ aside {
     background: url('/theme/header_1100.jpg');
     background-size: 100%;
     background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
@@ -91,4 +112,10 @@ footer {
   padding: $default-padding;
   margin-left:  auto;
   margin-right: auto;
+
+  &.main {
+    p:first-child {
+      font-size: 1.1em;
+    }
+  }
 }
