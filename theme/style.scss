@@ -52,6 +52,22 @@ aside {
   }
 }
 
+@media screen and (max-width: 600px) {
+  aside {
+    background: url('/theme/header_600.jpg');
+    background-size: 100%;
+    background-position: center;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  aside {
+    background: url('/theme/header_1100.jpg');
+    background-size: 100%;
+    background-position: center;
+  }
+}
+
 footer {
   border-top: 1px solid $accent-grey;
   color: $accent-grey;
