@@ -3,16 +3,25 @@ $main-font: 12pt Helvetica, Arial, sans-serif;
 $max-width: 750px;
 $default-padding: 15px;
 
+$pycon-snake-red: #ed1c23;
+$pycon-snake-blue: #0071bb;
+
 $accent-grey: #999;  // No American-isms here. ;-)
 
 body {
   margin: 0;
   padding: 0;
   font: $main-font;
-  line-height: 1.4em;
+  line-height: 1.45em;
 }
 
 a {
+  color: $pycon-snake-blue;
+
+  &:visited {
+    color: purple;
+  }
+
   &:hover {
     text-decoration: none;
   }
@@ -34,6 +43,8 @@ aside {
 
   img {
     width: 150px;
+    border: 8px solid black;
+    border-radius: 80px;
   }
 
   h1, h2 {
@@ -50,7 +61,7 @@ aside {
   }
 
   h2 {
-    font: 16pt Futura;
+    font: 18pt Futura;
   }
 }
 
@@ -115,7 +126,9 @@ footer {
 
   &.main {
     p:first-child {
-      font-size: 1.1em;
+      font-size: 1.15em;
+      font-weight: bold;
+      line-height: 1.45em;
     }
   }
 }
