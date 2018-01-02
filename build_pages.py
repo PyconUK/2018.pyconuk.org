@@ -32,5 +32,10 @@ if __name__ == '__main__':
             'content': markdown.markdown(content)
         })
 
-        with open(f.replace('.md', '.html'), 'w') as outfile:
+        out_name = f.replace('.md', '.html')
+        if out_name != 'index.html':
+            out_name = f.replace('.md', '') + '/index.html'
+            os.makedirs(os.path.dirname(out_name), exist_ok=True)
+
+        with open(out_name, 'w') as outfile:
             outfile.write(template.render(context))
