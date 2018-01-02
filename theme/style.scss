@@ -1,0 +1,39 @@
+$main-font: 12pt Helvetica, Arial, sans-serif;
+
+$max-width: 750px;
+$default-padding: 10px;
+
+$accent-grey: #999;  // No American-isms here. ;-)
+
+body {
+  margin: 0;
+  padding: 0;
+  font: $main-font;
+}
+
+aside {
+  h1 {
+    font: 28pt Futura;
+    font-weight: 600;
+  }
+
+  h2 {
+    font: 16pt Futura;
+  }
+}
+
+footer {
+  border-top: 1px solid $accent-grey;
+  color: $accent-grey;
+  font-size: 0.85em;
+  p:first-child {
+    margin-top: $default-padding;
+  }
+}
+
+.content {
+  max-width: 750px;
+  padding: $default-padding;
+  margin-left:  auto;
+  margin-right: auto;
+}
