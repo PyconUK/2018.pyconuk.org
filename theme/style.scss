@@ -1,24 +1,111 @@
 $main-font: 12pt Helvetica, Arial, sans-serif;
 
 $max-width: 750px;
-$default-padding: 10px;
+$default-padding: 15px;
+
+$pycon-snake-red: #ed1c23;
+$pycon-snake-blue: #0071bb;
 
 $accent-grey: #999;  // No American-isms here. ;-)
+
+
+@import "_fonts.scss";
+
 
 body {
   margin: 0;
   padding: 0;
   font: $main-font;
+  line-height: 1.45em;
+}
+
+a {
+  color: $pycon-snake-blue;
+
+  &:visited {
+    color: purple;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+h1 {
+  font-family: $futura-font;
+  font-weight: 400;
+  font-size: 2.5em;
 }
 
 aside {
+
+  border-bottom: 8px solid black;
+
+  .content {
+    padding-top:    3em;
+    padding-bottom: 3em;
+  }
+
+  background: url('/theme/header.jpg');
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  img {
+    width: 150px;
+    border: 8px solid black;
+    border-radius: 80px;
+  }
+
+  h1, h2 {
+    display: inline;
+    background: white;
+    box-shadow: -5px 0 0 5px white, 5px 0 0 5px white;
+//    background: black;
+    color: black;
+  }
+
   h1 {
-    font: 28pt Futura;
-    font-weight: 600;
+    font: 28pt $futura-font;
   }
 
   h2 {
-    font: 16pt Futura;
+    font: 18pt $futura-font;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  aside {
+    background: url('/theme/header_600.jpg');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .content {
+      padding-top:    1em;
+      padding-bottom: 1em;
+    }
+
+    h1 {
+      font-size: 22pt;
+    }
+
+    h2 {
+      font-size: 14pt;
+    }
+
+    img {
+      max-width: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  aside {
+    background: url('/theme/header_1100.jpg');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
@@ -26,8 +113,16 @@ footer {
   border-top: 1px solid $accent-grey;
   color: $accent-grey;
   font-size: 0.85em;
+
   p:first-child {
     margin-top: $default-padding;
+  }
+
+  a {
+    color: $accent-grey;
+    &:visited {
+      color: darken($accent-grey, 15%);
+    }
   }
 }
 
@@ -36,4 +131,35 @@ footer {
   padding: $default-padding;
   margin-left:  auto;
   margin-right: auto;
+
+  &.main {
+    p:first-child {
+      font-size: 1.15em;
+      font-weight: bold;
+      line-height: 1.45em;
+    }
+  }
+}
+
+
+.navbar {
+  background: black;
+  margin-left:  auto;
+  margin-right: auto;
+  color: white;
+
+  a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .content {
+    padding: 8px;
+    padding-bottom: 4px;
+    text-align: center;
+  }
 }

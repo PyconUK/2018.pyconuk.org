@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PyCon UK 2018</title>
+
+    <link rel="stylesheet" href="/theme/style.css">
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="content">
+        <a href="/">Home</a> •
+        <a href="http://uk.python.org/">News</a> •
+        <a href="/cfp/">Call for Proposals</a> •
+        <a href="/venue/">Venue</a> •
+        <a href="/sponsorship/">Sponsorship</a> •
+        <a href="/code-of-conduct/">Code of Conduct</a> •
+        <a href="/contact/">Contact</a>
+      </div>
+    </div>
+    <aside>
+      <div class="content">
+        <center>
+          <img src="/theme/snakes_circle.jpg">
+          <p><h1>PyCon UK 2018</h1></p>
+          <h2>15&ndash;19 September in Cardiff City Hall</h2>
+        </center>
+      </div>
+    </aside>
+
+    <div class="content main">
+      {% if title %}
+      <p><h1>{{ title }}</h1></p>
+      {% endif %}
+
+      {{ content|safe }}
+    </div>
+
+    <footer>
+      <div class="content">
+        <p>
+          Copyright &copy; 2018 PyCon UK Society Ltd.
+          All rights reserved.
+        </p>
+
+        <p>
+          <strong>PyCon UK Society Ltd.</strong>
+          Company Number: <a href="http://data.companieshouse.gov.uk/doc/company/10073469">10073469</a>, c/o Acconomy, Arena Business Centre, Holyrood Close, Poole, BH17 7FJ, United Kingdom.
+        </p>
+
+        <p>
+          Header image: <a href="https://www.flickr.com/photos/152472562@N06/37890880206/">day one of PyCon UK 2017</a>.
+          Photograph by <a href="https://www.flickr.com/photos/152472562@N06/">Mark Hawkins</a>.
+        </p>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
