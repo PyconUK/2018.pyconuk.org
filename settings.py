@@ -21,7 +21,7 @@ INSTALLED_ADDONS = [
     'djangocms-video',
     'django-filer',
     # </INSTALLED_ADDONS>
-    'djangocms-icon'
+    # 'djangocms-icon'
 ]
 
 import aldryn_addons.settings
@@ -31,5 +31,5 @@ aldryn_addons.settings.load(locals())
 # all django settings can be altered here
 
 INSTALLED_APPS.extend([
-    # add your project specific apps here
+    'djangocms_icon',
 ])
