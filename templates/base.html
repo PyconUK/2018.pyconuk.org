@@ -4,12 +4,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>{% block title %}{% page_attribute page_title %} - {{ request.site.name }}{% endblock title %}</title>
 
     <!-- Bootstrap -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,23 +20,85 @@
     <![endif]-->
 
     {% render_block "css" %}
+    {% if request.toolbar and request.toolbar.edit_mode_active %}
+        <style type="text/css">
+            @media (min-width: 1602px) {
+                .cms-structure-mode-structure {
+                    width: calc(100% - 402px);
+                }
+                .cms-structure-mode-structure .fixed-top {
+                    right: 402px;
+                }
+            }
+
+            .cms-toolbar-expanded {
+                margin-top: 0 !important;
+                padding-top: 46px !important;
+            }
+
+            .cms-toolbar-expanded .fixed-top {
+                top: 46px;
+            }
+
+            h3.cms-modules-page-heading {
+                padding-top: 30px;
+            }
+        </style>
+    {% endif %}
     {{ ALDRYN_SNAKE.render_head }}
   </head>
   <body>
     {% cms_toolbar %}
 
-    <nav class="navbar navbar-default">
-      <ul class="nav navbar-nav">
-        {% show_menu 0 0 100 100 %}
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">{{ request.site.name }}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav">
+                {% show_menu 0 0 100 100 "includes/navigation.html" %}
+            </ul>
+        </div>
     </nav>
 
-    {% block content %}
-      <p>Hello world! This is the Bootstrap 3 Boilerplate.</p>
+    {% block header %}
+        {% placeholder "header" or %}
+            {% include "includes/header.html" %}
+        {% endplaceholder %}
     {% endblock %}
 
+    {% block breadcrumb %}
+        {% if not request.current_page.is_home %}
+            <nav aria-label="breadcrumb" role="navigation" class="container">
+                <ol class="breadcrumb">
+                    {% show_breadcrumb 0 "includes/breadcrumb.html" %}
+                </ol>
+            </nav>
+        {% endif %}
+    {% endblock breadcrumb %}
+
+    {% block messages %}
+        {% include "includes/messages.html" %}
+    {% endblock messages %}
+
+    {% block content %}
+        <p>Hello world! This is the Bootstrap 4 Boilerplate.</p>
+    {% endblock %}
+
+    {% static_placeholder "Sharing" %}
+
+    <footer class="container pt-1 pb-3 clearfix">
+        <hr>
+        <p class="float-left" style="padding-top: 6px;">&copy; {{ request.site.name }} – {% now "Y" %}</p>
+        <ul class="nav float-right">
+            {% show_menu_below_id "footer" 0 0 100 100 "includes/navigation.html" %}
+        </ul>
+    </footer>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 

@@ -21,6 +21,7 @@ INSTALLED_ADDONS = [
     'djangocms-video',
     'django-filer',
     # </INSTALLED_ADDONS>
+    'djangocms-icon'
 ]
 
 import aldryn_addons.settings

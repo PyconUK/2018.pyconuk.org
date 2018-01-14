@@ -1,0 +1,14 @@
+{% load i18n %}
+
+{% if messages %}
+    <div data-cms-messages-container class="container">
+        {% for message in messages %}
+            <div data-cms-message data-cms-message-tags="{{ message.tags }}" class="alert alert-dismissible spacer-lg alert-message{% if message.tags %} alert-{{ message.tags }}{% endif %}">
+                <button type="button" class="close" data-dismiss="alert" aria-label="{% trans "Close" %}">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <p>{{ message }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
