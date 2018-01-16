@@ -86,14 +86,10 @@
         <p>Hello world! This is the Bootstrap 4 Boilerplate.</p>
     {% endblock %}
 
-    {% static_placeholder "Sharing" %}
-
     <footer class="container pt-1 pb-3 clearfix">
-        <hr>
-        <p class="float-left" style="padding-top: 6px;">&copy; {{ request.site.name }} – {% now "Y" %}</p>
-        <ul class="nav float-right">
-            {% show_menu_below_id "footer" 0 0 100 100 "includes/navigation.html" %}
-        </ul>
+
+        {% static_placeholder "Footer" %}
+
     </footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
