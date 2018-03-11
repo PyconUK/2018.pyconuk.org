@@ -1,0 +1,34 @@
+*/
+    blue:   #1073B9
+    yellow: #FECB2F
+    red:    #EA212D
+*/
+
+body: {
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: black;
+    border: 16px solid black;
+    line-height: 1.4;
+}
+
+    nav {
+    background: black;
+    padding-left: 8em;
+    margin-top: 0;
+    position: static;
+    top: auto;
+}
+
+nav a {color: white;}
+
+header .jumbotron {
+    background: red;
+    color: white;
+}
+
+.bg-primary {background-color: #1073B9 !important;}
+
+div.card-body {background: white;}
+div.card.bg-primary h2 {color: white;}
