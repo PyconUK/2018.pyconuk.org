@@ -29,6 +29,15 @@ header .jumbotron {
 }
 
 .bg-primary {background-color: #1073B9 !important;}
+.bg-danger {background-color: #EA212D !important;}
+.bg-warning {background-color: #FECB2F !important;}
+
 
 div.card-body {background: white;}
 div.card.bg-primary h2 {color: white;}
+div.card.bg-danger h2 {color: white;}
+
+.btn-primary {
+    background-color: #1073B9;
+    border-color: #1073B9;
+}
