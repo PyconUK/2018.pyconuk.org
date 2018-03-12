@@ -13,7 +13,13 @@ body: {
     line-height: 1.4;
 }
 
-    nav {
+h2  {margin-top: 3rem; margin-bottom: 2rem;}
+h3  {margin-top: 2rem; margin-bottom: 1rem;}
+h4  {margin-top: 1.5rem; margin-bottom: 1rem;}
+
+div.col {margin-bottom: 1rem;}
+
+nav.navbar {
     background: black;
     padding-left: 8em;
     margin-top: 0;
@@ -23,9 +29,11 @@ body: {
 
 nav a {color: white;}
 
+nav ol.breadcrumb {background: #1073B9; color: white;}
+
 header .jumbotron {
-    background: red;
-    color: white;
+    background: #FECB2F;
+    color: black;
 }
 
 .bg-primary {background-color: #1073B9 !important;}
@@ -37,7 +45,16 @@ div.card-body {background: white;}
 div.card.bg-primary h2 {color: white;}
 div.card.bg-danger h2 {color: white;}
 
+div.card h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
 .btn-primary {
     background-color: #1073B9;
     border-color: #1073B9;
 }
+
+figcaption {font-style: italic;}
+
+.breadcrumb-item+.breadcrumb-item::before {color: white;}
