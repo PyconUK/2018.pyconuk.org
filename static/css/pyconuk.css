@@ -42,12 +42,18 @@ header .jumbotron {
 
 
 div.card-body {background: white;}
-div.card.bg-primary h2 {color: white;}
-div.card.bg-danger h2 {color: white;}
+div.card.bg-primary .card-header {color: white;}
+div.card.bg-danger .card-header {color: white;}
 
 div.card h2 {
     font-size: 1.2rem;
     font-weight: bold;
+    margin: 0;
+}
+
+div.card h3 {
+    font-size: 1rem;
+    margin: 0;
 }
 
 .btn-primary {
