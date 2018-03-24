@@ -1,107 +1,108 @@
 {% load staticfiles i18n cms_tags menu_tags sekizai_tags %}
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>{% block title %}{% page_attribute page_title %} - {{ request.site.name }}{% endblock title %}</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>{% block title %}{% page_attribute page_title %} - {{ request.site.name }}{% endblock title %}</title>
 
-    <!-- Bootstrap -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="{% static 'css/pyconuk.css' %}" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="{% static 'css/pyconuk.css' %}" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    {% render_block "css" %}
-    {% if request.toolbar and request.toolbar.edit_mode_active %}
-        <style type="text/css">
-            @media (min-width: 1602px) {
-                .cms-structure-mode-structure {
-                    width: calc(100% - 402px);
-                }
-                .cms-structure-mode-structure .fixed-top {
-                    right: 402px;
-                }
-            }
+  {% render_block "css" %}
+  {% if request.toolbar and request.toolbar.edit_mode_active %}
+    <style type="text/css">
+      @media (min-width: 1602px) {
+        .cms-structure-mode-structure {
+          width: calc(100% - 402px);
+        }
+        .cms-structure-mode-structure .fixed-top {
+          right: 402px;
+        }
+      }
 
-            .cms-toolbar-expanded {
-                margin-top: 0 !important;
-                padding-top: 46px !important;
-            }
+      .cms-toolbar-expanded {
+        margin-top: 0 !important;
+        padding-top: 46px !important;
+      }
 
-            .cms-toolbar-expanded .fixed-top {
-                top: 46px;
-            }
+      .cms-toolbar-expanded .fixed-top {
+        top: 46px;
+      }
 
-            h3.cms-modules-page-heading {
-                padding-top: 30px;
-            }
-        </style>
-    {% endif %}
-    {{ ALDRYN_SNAKE.render_head }}
-  </head>
-  <body>
-    {% cms_toolbar %}
+      h3.cms-modules-page-heading {
+        padding-top: 30px;
+      }
+    </style>
+  {% endif %}
+  {{ ALDRYN_SNAKE.render_head }}
+</head>
 
+<body>
+  {% cms_toolbar %}
+  <div class="masthead">
     <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="/">{{ request.site.name }}</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="nav navbar-nav">
-                {% show_menu 0 0 100 100 "includes/navigation.html" %}
-            </ul>
-        </div>
+      <a class="navbar-brand" href="/"><span>PYCON UK</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>Menu
+          </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav navbar-nav">
+          {% show_menu 0 0 100 100 "includes/navigation.html" %}
+        </ul>
+      </div>
     </nav>
 
     {% block header %}
       <header>
-        {% placeholder "header" or %}
-            {% include "includes/header.html" %}
-        {% endplaceholder %}
+        {% placeholder "header" or %} {% include "includes/header.html" %} {% endplaceholder %}
       </header>
     {% endblock %}
 
     {% block breadcrumb %}
-        {% if not request.current_page.is_home %}
-            <nav aria-label="breadcrumb" role="navigation" class="container">
-                <ol class="breadcrumb">
-                    {% show_breadcrumb 0 "includes/breadcrumb.html" %}
-                </ol>
-            </nav>
-        {% endif %}
+      {% if not request.current_page.is_home %}
+        <nav aria-label="breadcrumb" role="navigation" class="container">
+          <svg class="breadcrumb-python" xmlns="http://www.w3.org/2000/svg" width="55" height="82"><g fill="none" fill-rule="evenodd"><path fill="#1073B9" fill-rule="nonzero" d="M54.4 12.1v12.6H27.6v57.2H1V14.6S-1.2 0 28 0c28.1 0 26.4 12.1 26.4 12.1z"/><path fill="#FFF" d="M42.9 8.4a4.9 4.9 0 1 0 0 9.7 4.9 4.9 0 0 0 0-9.7z" class="blink"/></g></svg>
+          <ol class="breadcrumb">
+            {% show_breadcrumb 0 "includes/breadcrumb.html" %}
+          </ol>
+        </nav>
+      {% endif %}
     {% endblock breadcrumb %}
 
     {% block messages %}
-        {% include "includes/messages.html" %}
+      {% include "includes/messages.html" %}
     {% endblock messages %}
+  </div>
 
+  <main>
     {% block content %}
-        <p>Hello world! This is the Bootstrap 4 Boilerplate.</p>
+      <p>Hello world! This is the Bootstrap 4 Boilerplate.</p>
     {% endblock %}
+  </main>
 
-    <footer class="container pt-1 pb-3 clearfix">
-
+  <footer class="foot">
+    <div class="container pt-1 pb-3 clearfix">
       {% static_placeholder "Footer" %}
+    </div>
+  </footer>
 
-    </footer>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-
-    {% render_block "js" %}
-    {{ ALDRYN_SNAKE.render_tail }}
-  </body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  {% render_block "js" %}
+  {{ ALDRYN_SNAKE.render_tail }}
+</body>
 </html>

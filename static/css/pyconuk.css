@@ -1,66 +1,392 @@
-*/
-    blue:   #1073B9
-    yellow: #FECB2F
-    red:    #EA212D
-*/
+/* */
 
-body: {
-    margin: 0;
-    padding: 0;
-    background: white;
-    color: black;
-    border: 16px solid black;
-    line-height: 1.4;
+blue: #1073B9 yellow: #FECB2F red: #EA212D */ */ @font-face {
+  font-family: 'Futura-Bold';
+  src: url('../fonts/361E23_1_0.eot');
+  src: url('../fonts/361E23_1_0.eot?#iefix') format('embedded-opentype'), url('../fonts/361E23_1_0.woff2') format('woff2'), url('../fonts/361E23_1_0.woff') format('woff'), url('../fonts/361E23_1_0.ttf') format('truetype');
 }
 
-h2  {margin-top: 3rem; margin-bottom: 2rem;}
-h3  {margin-top: 2rem; margin-bottom: 1rem;}
-h4  {margin-top: 1.5rem; margin-bottom: 1rem;}
+@keyframes blink {
+  93% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0);
+  }
+  97% {
+    transform: scaleY(1);
+  }
+}
 
-div.col {margin-bottom: 1rem;}
+.blink {
+  transform-origin: 0 15.5%;
+  animation-name: blink;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-delay: 0s;
+}
 
-nav.navbar {
-    background: black;
-    padding-left: 8em;
-    margin-top: 0;
-    position: static;
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+  color: black;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: white;
+  color: black;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.4;
+  background: #FECB2F;
+  background: -webkit-linear-gradient(to right, #FECB2F, #F7971E);
+  background: linear-gradient(to right, #FECB2F, #F7971E);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Futura-Bold';
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+
+h2 {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+div.col {
+  margin-bottom: 1rem;
+}
+
+.masthead {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.masthead:before {
+  position: absolute;
+  content: '';
+  background: url(../img/cardiff.svg) center bottom / 120% no-repeat;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  bottom: 0;
+  opacity: 0.3;
+}
+
+@media all and (min-width:720px) {
+  .masthead:before {
+    background: url(../img/cardiff.svg) center bottom / 90% no-repeat;
+  }
+}
+
+@media all and (min-width:1400px) {
+  .masthead:before {
+    background: url(../img/cardiff.svg) center bottom / 70% no-repeat;
+  }
+}
+
+.navbar {
+  margin-top: 0;
+  position: static;
+  top: auto;
+}
+
+main {
+  background: white;
+  padding: 3rem 0;
+}
+
+main .container {
+  /* max-width: 928px; */
+}
+
+.navbar-nav {
+  padding-left: 0rem;
+}
+
+@media all and (min-width:576px) {
+  .navbar-nav {
+    padding-left: 7rem;
+  }
+  .navbar-collapse {
+    margin-top: -5rem;
+  }
+}
+
+@media all and (min-width:992px) {
+  .navbar-collapse {
+    margin-top: 0rem;
+  }
+  .navbar-nav {
+    padding-left: 2rem;
+  }
+}
+
+.breadcrumb {
+  position: relative;
+  background: #1073B9;
+  color: white;
+  border-radius: 0;
+  margin: 0 -1rem;
+  font-family: 'Futura-Bold';
+  font-weight: normal;
+}
+
+@media all and (min-width:576px) {
+  .breadcrumb {
+    border-radius: 2rem;
+  }
+}
+
+.breadcrumb-python {
+  position: absolute;
+  margin-top: -3em;
+}
+
+.breadcrumb a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.breadcrumb a:hover {
+  opacity: 1;
+}
+
+/* navbar-brand */
+
+.navbar-brand {
+  background: black;
+  width: 4.5em;
+  height: 2em;
+  font-size: 2em;
+  margin: 0;
+  top: -0.5rem;
+  left: -1rem;
+  background: black url('/static/img/crown.svg') 0 .3em / 30% no-repeat;
+  padding: 0.2em 0 0 0.5em;
+  position: absolute;
+  z-index: 1000;
+  text-decoration: none;
+  position: relative;
+  z-index: 10;
+  font-family: 'Futura-Medium';
+}
+
+@media all and (min-width: 576px) {
+  .navbar-brand {
+    width: 3em;
+    height: 2.5em;
+    background: black url('/static/img/crown.svg') 0.12em 0.1em / 90% no-repeat;
+    padding: 0 0 .5em 0;
+    left: 0;
+  }
+}
+
+.navbar-brand span {
+  display: block;
+  white-space: nowrap;
+  font-size: 0.7em;
+  font-weight: normal;
+  line-height: 2.3em;
+  position: relative;
+  color: white;
+  text-decoration: none;
+  text-align: left;
+  text-indent: 1.5em;
+  z-index: 5;
+}
+
+@media all and (min-width: 576px) {
+  .navbar-brand span {
+    padding-top: 5.5em;
+    font-size: 0.5em;
+    text-indent: 0;
+    text-align: center;
+    line-height: 1;
+  }
+}
+
+.navbar-brand:before, .navbar-brand:after {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+  border-style: solid;
+  z-index: 0;
+}
+
+.navbar-brand:before {
+  margin: 0 -2em 0 0;
+  right: 0;
+  top: 0;
+  border-width: 2em 2em 0 0;
+  border-color: black transparent transparent transparent;
+}
+
+@media all and (min-width: 576px) {
+  .navbar-brand:before {
+    left: 0;
     top: auto;
+    margin: 0 0 -2em 0;
+    border-width: 2em 3em 0 0;
+    border-color: black transparent transparent transparent;
+  }
 }
 
-nav a {color: white;}
-
-nav ol.breadcrumb {background: #1073B9; color: white;}
-
-header .jumbotron {
-    background: #FECB2F;
-    color: black;
+.navbar-brand:after {
+  right: 0;
+  margin: 0 -2em 0 0;
+  border-width: 0 2em 2em 0;
+  border-color: transparent transparent black transparent;
 }
 
-.bg-primary {background-color: #1073B9 !important;}
-.bg-danger {background-color: #EA212D !important;}
-.bg-warning {background-color: #FECB2F !important;}
+@media all and (min-width: 576px) {
+  .navbar-brand:after {
+    right: 0;
+    margin: 0 0 -2em 0;
+    border-width: 0 3em 2em 0;
+    border-color: transparent black transparent transparent;
+  }
+}
 
+.navbar-nav .nav-link {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-family: 'Futura-Bold';
+  text-transform: uppercase;
+  margin: 0 .75rem;
+  padding: 0.25rem;
+  color: black;
+}
 
-div.card-body {background: white;}
-div.card.bg-primary .card-header {color: white;}
-div.card.bg-danger .card-header {color: white;}
+.navbar-nav .nav-link:hover {
+  background: #1073B9;
+  color: white;
+  border-radius: 1rem;
+}
+
+.jumbotron {
+  color: black;
+  background: none;
+  border-radius: 0;
+  position: relative;
+}
+
+.masthead:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 7vw 100vw;
+  border-color: transparent transparent white transparent;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -9;
+}
+
+.bg-primary {
+  background-color: #1073B9 !important;
+}
+
+.bg-danger {
+  background-color: #EA212D !important;
+}
+
+.bg-warning {
+  background-color: #FECB2F !important;
+}
+
+div.card-body {
+  background: white;
+}
+
+div.card.bg-primary .card-header {
+  color: white;
+}
+
+div.card.bg-danger .card-header {
+  color: white;
+}
 
 div.card h2 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
 }
 
 div.card h3 {
-    font-size: 1rem;
-    margin: 0;
+  font-size: 1rem;
+  margin: 0;
 }
 
 .btn-primary {
-    background-color: #1073B9;
-    border-color: #1073B9;
+  background-color: #1073B9;
+  border-color: #1073B9;
 }
 
-figcaption {font-style: italic;}
+figcaption {
+  font-style: italic;
+}
 
-.breadcrumb-item+.breadcrumb-item::before {color: white;}
+.breadcrumb-item+.breadcrumb-item::before {
+  color: white;
+}
+
+/* Footer */
+
+.foot {
+  background: black;
+  color: white;
+  padding: 5rem 0;
+  position: relative;
+  margin-top: 10vw;
+}
+
+.foot:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -7vw;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 7vw 100vw;
+  border-color: transparent transparent black transparent;
+}
+
+.foot:after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: white;
+  top: -10vw;
+  width: 100vw;
+  height: 10vw;
+  z-index: -1;
+}
