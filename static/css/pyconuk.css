@@ -1,6 +1,4 @@
-/* */
-
-blue: #1073B9 yellow: #FECB2F red: #EA212D */ */ @font-face {
+@font-face {
   font-family: 'Futura-Bold';
   src: url('../fonts/361E23_1_0.eot');
   src: url('../fonts/361E23_1_0.eot?#iefix') format('embedded-opentype'), url('../fonts/361E23_1_0.woff2') format('woff2'), url('../fonts/361E23_1_0.woff') format('woff'), url('../fonts/361E23_1_0.ttf') format('truetype');
