@@ -1,8 +1,4 @@
-@font-face {
-  font-family: 'Futura-Bold';
-  src: url('../fonts/361E23_1_0.eot');
-  src: url('../fonts/361E23_1_0.eot?#iefix') format('embedded-opentype'), url('../fonts/361E23_1_0.woff2') format('woff2'), url('../fonts/361E23_1_0.woff') format('woff'), url('../fonts/361E23_1_0.ttf') format('truetype');
-}
+@import url('//fonts.googleapis.com/css?family=IBM+Plex+Serif:300,300i,600,600i|Raleway:300,500,700,900');
 
 @keyframes blink {
   93% {
@@ -28,6 +24,10 @@
 }
 
 body {
+  font-family: 'IBM Plex Serif', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 18px;
   margin: 0;
   padding: 0;
   background: white;
@@ -37,37 +37,39 @@ body {
   padding: 0;
   background: white;
   color: black;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 18px;
   line-height: 1.4;
   background: #FECB2F;
   background: -webkit-linear-gradient(to right, #FECB2F, #F7971E);
   background: linear-gradient(to right, #FECB2F, #F7971E);
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Futura-Bold';
-}
+h1 {font-family: futura;}
 
 h1 {
   text-transform: uppercase;
   letter-spacing: -0.05em;
 }
 
+h2, h3, h4, h5 {
+  font-family: 'Raleway';
+}
+
 h2 {
   margin-top: 3rem;
   margin-bottom: 2rem;
+  font-weight: 900;
 }
 
 h3 {
   margin-top: 2rem;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 h4 {
   margin-top: 1.5rem;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 div.col {
@@ -320,28 +322,24 @@ main .container {
   background-color: #FECB2F !important;
 }
 
+/* -------------- cards and their headings ------------- */
+
 div.card-body {
   background: white;
 }
 
-div.card.bg-primary .card-header {
+div.card.bg-primary .card-header, div.card.bg-danger .card-header {
   color: white;
 }
 
-div.card.bg-danger .card-header {
-  color: white;
-}
+div.card h2, div.card h3, div.card h4 {margin: 0;}
 
-div.card h2 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin: 0;
-}
+div.card h2 {font-size: 1.4rem;}
 
-div.card h3 {
-  font-size: 1rem;
-  margin: 0;
-}
+div.card h3 {font-size: 1.2rem;}
+
+div.card h4 {font-size: 1rem;}
+
 
 .btn-primary {
   background-color: #1073B9;
