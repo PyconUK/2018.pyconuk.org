@@ -1,3 +1,4 @@
+@import url('//fonts.googleapis.com/css?family=IBM+Plex+Serif:300,300i,600,600i|Raleway:300,500,700,900');
 @font-face {
   font-family: 'Futura-Bold';
   src: url("../fonts/361E23_1_0.eot");
@@ -32,7 +33,8 @@ body {
   padding: 0;
   background: white;
   color: black;
-  font-weight: normal;
+  font-family: 'IBM Plex Serif', sans-serif;
+  font-weight: 300;
   font-style: normal;
   font-size: 18px;
   line-height: 1.4;
@@ -41,15 +43,8 @@ body {
   background: linear-gradient(to right, #FECB2F, #F7971E);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: 'Futura-Bold';
-}
-
 h1 {
+  font-family: 'Futura-Bold';
   text-transform: uppercase;
   letter-spacing: -0.05em;
 }
@@ -57,16 +52,26 @@ h1 {
 h2 {
   margin-top: 3rem;
   margin-bottom: 2rem;
+  font-weight: 900;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Raleway';
 }
 
 h3 {
   margin-top: 2rem;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 h4 {
   margin-top: 1.5rem;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 div.col {
@@ -109,7 +114,7 @@ div.col {
 
 main {
   background: white;
-  padding: 3rem 0 10vw 0;
+  padding: 3rem 0 10vw;
 }
 
 main .container {
@@ -310,8 +315,9 @@ main .container {
 .bg-warning {
   background-color: #FECB2F !important;
 }
-
-div.card-body {
+/* -------------- cards and their headings ------------- */
+div.card.bg-danger .card-header,
+div.card.bg-primary .card-header {
   background: white;
 }
 
@@ -319,19 +325,22 @@ div.card.bg-primary .card-header {
   color: white;
 }
 
-div.card.bg-danger .card-header {
-  color: white;
+div.card h2,
+div.card h3,
+div.card h4 {
+  margin: 0;
 }
 
 div.card h2 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin: 0;
+  font-size: 1.4rem;
 }
 
 div.card h3 {
+  font-size: 1.2rem;
+}
+
+div.card h4 {
   font-size: 1rem;
-  margin: 0;
 }
 
 .btn-primary {
@@ -349,9 +358,10 @@ figcaption {
 /* Footer */
 .foot {
   font-size: 80%;
-  padding: 15vw 0 3vw 0;
+  padding: 15vw 0 3vw;
   position: relative;
   margin-top: 10vw;
+
   &:before {
     content: '';
     display: block;
@@ -363,7 +373,6 @@ figcaption {
     border-width: 7vw 100vw 0 0;
     border-color: white transparent transparent transparent;
   }
-
 }
 
 .pyconuk {
@@ -374,7 +383,10 @@ figcaption {
   transform: translateX(-50%) translateY(-50%);
   top: 0;
   box-sizing: content-box;
-  *, *:before, *:after {
+
+  *,
+  *:after,
+  *:before {
     box-sizing: content-box;
   }
 }
@@ -390,7 +402,7 @@ figcaption {
   font-size: 3em;
   font-family: 'Futura-Bold';
   line-height: 1;
-  padding: 0.3em 0 0.15em 0;
+  padding: 0.3em 0 0.15em;
   width: 15em;
   background: white;
   text-align: center;
