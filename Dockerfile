@@ -9,6 +9,11 @@ FROM aldryn/base-project:py3-3.23
 # </DOCKER_FROM>
 
 # <NPM>
+# package.json is put into / so that mounting /app for local
+# development does not require re-running npm install
+ENV PATH=/node_modules/.bin:$PATH
+COPY package.json /
+RUN (cd / && npm install --production && rm -rf /tmp/*)
 # </NPM>
 
 # <BOWER>
@@ -31,6 +36,8 @@ COPY . /app
 # </SOURCE>
 
 # <GULP>
+ENV GULP_MODE=production
+RUN gulp build
 # </GULP>
 
 # <STATIC>
