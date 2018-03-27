@@ -222,6 +222,7 @@ main .container {
 }
 
 .navbar-brand span {
+  text-transform: uppercase;
   display: block;
   white-space: nowrap;
   font-size: 0.7em;
@@ -329,28 +330,17 @@ main .container {
 
 /* -------------- colours ------------- */
 
-.bg-primary {
-  background-color: #1073B9 !important; // blue
-}
+.bg-primary {background-color: #1073B9 !important;} // blue
 
-.bg-danger {
-  background-color: #EA212D !important; // red
-}
+.bg-danger {background-color: #EA212D !important;} // red
 
-.bg-warning {
-  background-color: #FECB2F !important; // yellow
-}
+.bg-warning {background-color: #FECB2F !important;} // yellow
 
 /* -------------- cards and their headings ------------- */
 
-div.card.bg-danger .card-header,
-div.card.bg-primary .card-header {
-  background: white;
-}
+div.card-body {background: white;}
 
-div.card.bg-primary .card-header {
-  color: white;
-}
+div.card.bg-primary .card-header, div.card.bg-danger .card-header {color: white;}
 
 div.card h2,
 div.card h3,
@@ -404,7 +394,7 @@ figcaption {
 .thankyou {
   top: 7.5em;
   left: 50%;
-  margin-left: -7.5em;
+  margin-left: -7.75em;
   z-index: 9000;
   position: absolute;
   text-transform: uppercase;

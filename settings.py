@@ -50,3 +50,15 @@ INSTALLED_APPS.extend([
     # "djangocms_bootstrap4.contrib.bootstrap4_content"
 
 ])
+
+import os
+env = os.getenv
+STAGE = env('STAGE', 'local').lower()
+if STAGE in {'local', 'test'}:
+    CMS_PAGE_CACHE = False
+    CMS_PLACEHOLDER_CACHE = False
+    CMS_CACHE_DURATIONS = {
+        'menus': 0,
+        'content': 0,
+        'permissions': 0,
+    }
