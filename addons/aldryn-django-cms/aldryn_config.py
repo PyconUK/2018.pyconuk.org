@@ -107,7 +107,7 @@ class Form(forms.BaseForm):
         ])
         settings['MIDDLEWARE_CLASSES'].insert(0, 'cms.middleware.utils.ApphookReloadMiddleware',)
 
-        settings['ADDON_URLS_I18N_LAST'] = 'cms.urls'
+        settings['ADDON_URLS_LAST'] = 'cms.urls'
 
         settings['CMS_PERMISSION'] = data['permissions_enabled']
 
