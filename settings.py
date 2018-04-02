@@ -51,6 +51,7 @@ INSTALLED_APPS.extend([
 
 ])
 
+
 import os
 env = os.getenv
 STAGE = env('STAGE', 'local').lower()
