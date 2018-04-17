@@ -84,6 +84,24 @@ main .container {
   /* max-width: 928px; */
 }
 
+blockquote {
+  color: #333;
+  quotes: "\201C""\201D""\2018""\2019";
+  font-size: 90%;
+  font-style: italic;
+}
+blockquote:before {
+  color: #EA212D;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
 /* -------------- layout components ---------------- */
 
 .masthead {
